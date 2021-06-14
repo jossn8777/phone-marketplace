@@ -1,0 +1,14 @@
+[
+  {
+    "id": 10,
+    "name": "iPhone 7",
+    "manufacturer": "Apple",
+    "description": "lorem ipsum dolor sit amet consectetur.",
+    "color": "black",
+    "price": 769,
+    "picture": "https://hc.com.vn/i/ecommerce/media/GS.006049_FEATURE_70846.jpg",
+    "screen": "4,7 inch IPS",
+    "processor": "A10 Fusion",
+    "ram": 2
+  }
+]

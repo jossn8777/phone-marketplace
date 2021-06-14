@@ -1,0 +1,43 @@
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: 'backend/tsconfig.json',
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint/eslint-plugin'],
+  extends: [
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+  ],
+  root: true,
+  env: {
+    node: true,
+    jest: true,
+  },
+  rules: {
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'comma-dangle': ['warn', 'always-multiline', { functions: 'never' }],
+    'comma-spacing': 'warn',
+    'eol-last': ['warn', 'always'],
+    eqeqeq: ['warn', 'always'],
+    'no-cond-assign': ['warn', 'always'],
+    'no-console': ['warn'],
+    'no-multiple-empty-lines': ['warn', { max: 1 }],
+    'no-trailing-spaces': 'warn',
+    semi: ['warn', 'always'],
+    'semi-spacing': ['warn', { before: false, after: true }],
+    'space-before-blocks': [
+      'warn',
+      { functions: 'always', keywords: 'always', classes: 'always' },
+    ],
+    'space-infix-ops': ['warn', { int32Hint: false }],
+    'object-shorthand': ['warn', 'always'],
+    quotes: ['warn', 'single'],
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+  },
+};

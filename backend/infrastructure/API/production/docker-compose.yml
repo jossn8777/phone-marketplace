@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  api-prod:
+    # The image here
+    image: vjtc0n/nest-phone:1.0.0
+    env_file:
+      - ./.api.env
+    tty: true
+    # ports:
+    #   - '3003:3000'
+    restart: always
+    networks:
+      - phone-network
+    volumes:
+      - './level-db:/usr/src/app/level-db'
+    #command: sleep infinity
+    command: yarn start
+
+networks:
+  phone-network:
+    external: false
+    name: phone-network

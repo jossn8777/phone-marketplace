@@ -1,0 +1,33 @@
+version: '3.3'
+services:
+  mysql:
+    image: mariadb:10.5.8
+    environment:
+      MYSQL_DATABASE: 'phone-market'
+      MYSQL_USER: 'phone'
+      MYSQL_PASSWORD: 'phone2021'
+      MYSQL_ROOT_PASSWORD: 'phone2021'
+    volumes:
+      - './maria-db:/var/lib/mysql'
+    ports:
+      - '3306:3306'
+    networks:
+      - phone-network
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+  redisdb:
+    container_name: redisdb-prod
+    image: redis:latest
+    environment:
+      REDIS_PASSWORD: '123456789'
+    volumes:
+      - './redis-db:/data'
+    entrypoint: redis-server --appendonly yes
+    networks:
+      - phone-network
+
+networks:
+  phone-network:
+    external: false
+    name: phone-network
